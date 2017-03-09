@@ -1,0 +1,14 @@
+body {
+  height: 100%;
+  margin: 12%
+}
+
+#pads {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pad {
+  margin: 10px
+}
