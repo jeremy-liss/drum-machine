@@ -1,7 +1,4 @@
-// document.getElementById('one').addEventListener('click', function() {
-//   var audio = document.getElementById('kick')
-//   audio.play()
-// })
+var react = require('react')
 
 kick()
 
