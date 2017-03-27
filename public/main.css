@@ -17,5 +17,7 @@ body {
 
 img {
   max-width: 80px;
-  max-height: 80px;
+  max-height: 70px;
+  min-width: 80px;
+  min-height:  70px;
 }

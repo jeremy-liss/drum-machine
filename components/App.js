@@ -1,5 +1,5 @@
 var React = require('react')
-
+var Sound = require('react-sound')
 
 function getImageSrc (pad, props){
   if (pad.isOn) {
@@ -13,7 +13,7 @@ function getImageSrc (pad, props){
 }
 
 module.exports = function (props){
-  
+
   function getId(ev){
     props.switchOn(ev.target.dataset.id);
   }
@@ -24,9 +24,12 @@ module.exports = function (props){
         Kick
         {props.pads.row0.map(function(pad) {
           var src = getImageSrc(pad, props)
+          var audio = props.sounds.kick
           return (
             <div id="pad" key={pad.id}>
               <img src={src} data-id={pad.id} onClick={getId} />
+              <audio src={audio}></audio>
+              {pad.isRunning && pad.isOn && console.log(pad.id)}
             </div>
           )
         })}
