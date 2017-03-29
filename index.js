@@ -38,5 +38,3 @@ function render(){
   var view = App(state)
   ReactDOM.render(view, target)
 }
-
-render(state)
