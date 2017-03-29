@@ -25,7 +25,7 @@ module.exports = function (props){
   return (
     <div>
       <div id="pads">
-        Kick
+        <img src={props.images.kick} />
         {props.pads[0].map(function(pad) {
           var src = getImageSrc(pad, props)
           return (
@@ -38,7 +38,7 @@ module.exports = function (props){
       </div>
 
       <div id="pads">
-        Snare
+        <img src={props.images.snare} />
         {props.pads[1].map(function(pad) {
           var src = getImageSrc(pad, props)
           return (
@@ -51,7 +51,7 @@ module.exports = function (props){
       </div>
 
       <div id="pads">
-        Hi-Hat
+        <img src={props.images.hat} />
         {props.pads[2].map(function(pad) {
           var src = getImageSrc(pad, props)
           return (

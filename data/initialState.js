@@ -24,7 +24,10 @@ module.exports = {
     black: '../images/black.jpg',
     red: '../images/red.jpg',
     on: '../images/on.jpg',
-    runningOn: '../images/runningOn.jpg'
+    runningOn: '../images/runningOn.jpg',
+    kick: '../images/kick.jpg',
+    snare: '../images/snare2.jpg',
+    hat: '../images/hat.jpg'
           },
 
   sounds: {
