@@ -27,13 +27,20 @@ module.exports = {
     runningOn: '../images/runningOn.jpg',
     kick: '../images/kick.jpg',
     snare: '../images/snare2.jpg',
-    hat: '../images/hat.jpg'
-          },
+    hat: '../images/hat.jpg',
+    tempo: '../images/tempo.jpg',
+    fast: '../images/fast.jpg',
+    medium: '../images/medium.jpg',
+    slow: '../images/slow.jpg'
+
+  },
 
   sounds: {
     kick: '../sounds/kick.wav',
     snare: '../sounds/clp.wav',
     hat: '../sounds/hat.wav'
-          }
+  },
+
+  speed: 500
 
 }
