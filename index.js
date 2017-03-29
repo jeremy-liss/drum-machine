@@ -4,32 +4,25 @@ var ReactDOM = require('react-dom')
 var state = require('./data/initialState')
 var App = require('./components/App')
 
-var rows = Object.keys(state.pads)
-
-function makeRed(state){
-  rows.forEach(function(row){
-    state.pads[row].forEach(function(pad) {
-      setTimeout(function(){
-        pad.isRunning = true
-        if (pad.col > 0){
-          state.pads[row][pad.col-1].isRunning = false
-        }
-        else {
-          state.pads[row][3].isRunning = false
-        }
-        render(state)
-      }, (pad.col+1) *500)
-    })
+var stableLoop = function(){
+  var column = (state.count + 1) % 4
+  var last_column = state.count % 4
+  state.pads.forEach(function(row){
+    // turn off last pads
+    // turn on current pads
+    row[column].isRunning = true
+    row[last_column].isRunning = false
   })
+  state.count += 1
+  render(state)
 }
 
-var loop = ()=>makeRed(state)
-loop()
-setInterval(loop, 2000)
+setInterval(function(){stableLoop()}, 500)
 
-function switchOn (id){
-  rows.forEach(function(row){
-    state.pads[row].forEach(function(pad) {
+
+function switchOn(id){
+  state.pads.forEach(function(rows){
+    rows.forEach(function(pad) {
       if (id == pad.id) {
         pad.isOn = !pad.isOn
         render(state)
