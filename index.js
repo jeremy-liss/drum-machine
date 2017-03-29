@@ -8,8 +8,6 @@ var stableLoop = function(){
   var column = (state.count + 1) % 4
   var last_column = state.count % 4
   state.pads.forEach(function(row){
-    // turn off last pads
-    // turn on current pads
     row[column].isRunning = true
     row[last_column].isRunning = false
   })
@@ -17,8 +15,9 @@ var stableLoop = function(){
   render(state)
 }
 
-setInterval(function(){stableLoop()}, 500)
-
+setInterval(function(){
+  stableLoop()
+}, 500)
 
 function switchOn(id){
   state.pads.forEach(function(rows){

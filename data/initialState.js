@@ -23,12 +23,14 @@ module.exports = {
   images: {
     black: '../images/black.jpg',
     red: '../images/red.jpg',
-    on: '../images/on.jpg'
+    on: '../images/on.jpg',
+    runningOn: '../images/runningOn.jpg'
           },
 
   sounds: {
     kick: '../sounds/kick.wav',
-    snare: '../sounds/clp.wav'
+    snare: '../sounds/clp.wav',
+    hat: '../sounds/hat.wav'
           }
 
 }

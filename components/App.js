@@ -2,12 +2,16 @@ var React = require('react')
 var Sound = require('react-sound')
 
 function getImageSrc (pad, props){
-  if (pad.isOn) {
+   if (pad.isOn && pad.isRunning){
+    return props.images.runningOn
+  }
+  else if (pad.isOn && !pad.isRunning) {
     return props.images.on
   }
   else if (pad.isRunning) {
     return props.images.red
-  } else {
+  }
+  else {
     return props.images.black
   }
 }
@@ -27,7 +31,7 @@ module.exports = function (props){
           return (
             <div id="pad" key={pad.id}>
               <img src={src} data-id={pad.id} onClick={getId} />
-              {pad.isRunning && pad.isOn && <Sound url='../sounds/kick.wav' playStatus={Sound.status.PLAYING} />}
+              {pad.isRunning && pad.isOn && <Sound url={props.sounds.kick} playStatus={Sound.status.PLAYING} />}
             </div>
           )
         })}
@@ -40,7 +44,7 @@ module.exports = function (props){
           return (
             <div id="pad" key={pad.id}>
               <img src={src} data-id={pad.id} onClick={getId} />
-              {pad.isRunning && pad.isOn && <Sound url='../sounds/clp.wav' playStatus={Sound.status.PLAYING} />}
+              {pad.isRunning && pad.isOn && <Sound url={props.sounds.snare} playStatus={Sound.status.PLAYING} />}
             </div>
           )
         })}
@@ -53,6 +57,7 @@ module.exports = function (props){
           return (
             <div id="pad" key={pad.id}>
               <img src={src} data-id={pad.id} onClick={getId} />
+              {pad.isRunning && pad.isOn && <Sound url={props.sounds.hat} playStatus={Sound.status.PLAYING} />}
             </div>
           )
         })}
