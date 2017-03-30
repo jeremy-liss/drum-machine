@@ -4,6 +4,9 @@ var ReactDOM = require('react-dom')
 var state = require('./data/initialState')
 var App = require('./components/App')
 
+var intervalHandle = null
+setSpeed()
+
 function stableLoop (){
   var column = (state.count + 1) % 4
   var last_column = state.count % 4
@@ -15,9 +18,12 @@ function stableLoop (){
   render(state)
 }
 
-setInterval(function(){
-  stableLoop()
-}, state.speed)
+function setSpeed (speed = state.speed) {
+  clearInterval(intervalHandle)
+  intervalHandle = setInterval(function(){
+    stableLoop()
+  }, speed)
+}
 
 function switchOn(id){
   state.pads.forEach(function(rows){
@@ -29,15 +35,14 @@ function switchOn(id){
     })
   })
 }
-
 state.switchOn = switchOn
 
 function changeSpeed(speed){
   state.speed = speed
   console.log(state.speed)
+  setSpeed(speed)
   render(state)
 }
-
 state.changeSpeed = changeSpeed
 
 var target = document.getElementById('root')

@@ -69,8 +69,8 @@ module.exports = function (props){
       </div>
       <div id="pads">
         <div id="pad"><img src={props.images.tempo} /></div>
-        <div id="pad"><img src={props.images.slow} data-speed={900} onClick={getSpeed}/></div>
-        <div id="pad"><img src={props.images.medium} data-speed={500} onClick={getSpeed}/></div>
+        <div id="pad"><img src={props.images.slow} data-speed={600} onClick={getSpeed}/></div>
+        <div id="pad"><img src={props.images.medium} data-speed={450} onClick={getSpeed}/></div>
         <div id="pad"><img src={props.images.fast} data-speed={200} onClick={getSpeed}/></div>
       </div>
 

@@ -41,6 +41,6 @@ module.exports = {
     hat: '../sounds/hat.wav'
   },
 
-  speed: 500
+  speed: 450
 
 }
