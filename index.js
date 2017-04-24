@@ -39,7 +39,6 @@ state.switchOn = switchOn
 
 function changeSpeed(speed){
   state.speed = speed
-  console.log(state.speed)
   setSpeed(speed)
   render(state)
 }

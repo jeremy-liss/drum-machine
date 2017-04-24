@@ -25,22 +25,14 @@ module.exports = {
     red: '../images/red.jpg',
     on: '../images/on.jpg',
     runningOn: '../images/runningOn.jpg',
-    kick: '../images/kick.jpg',
-    snare: '../images/snare2.jpg',
-    hat: '../images/hat.jpg',
     tempo: '../images/tempo.jpg',
     fast: '../images/fast.jpg',
     medium: '../images/medium.jpg',
-    slow: '../images/slow.jpg'
-
+    slow: '../images/slow.jpg',
+    labels: ['../images/kick.jpg', '../images/snare2.jpg', '../images/hat.jpg']
   },
 
-  sounds: {
-    kick: '../sounds/kick.wav',
-    snare: '../sounds/clp.wav',
-    hat: '../sounds/hat.wav'
-  },
+  sounds: ['../sounds/kick.wav', '../sounds/clp.wav', '../sounds/hat.wav'],
 
   speed: 450
-
 }

@@ -29,51 +29,30 @@ module.exports = function (props){
 
   return (
     <div>
-      <div id="pads">
-        <img src={props.images.kick} />
-        {props.pads[0].map(function(pad) {
-          var src = getImageSrc(pad, props)
-          return (
-            <div id="pad" key={pad.id}>
-              <img src={src} data-id={pad.id} onClick={getId} />
-              {pad.isRunning && pad.isOn && <Sound url={props.sounds.kick} playStatus={Sound.status.PLAYING} />}
-            </div>
-          )
-        })}
-      </div>
+      {props.pads.map(function(row, i){
+        return (
+          <div id="pads" key={i}>
+            <img src={props.images.labels[i]} />
+            {row.map(function(pad){
+              var src = getImageSrc(pad, props)
+              return (
+                <div id="pad" key={pad.id}>
+                  <img src={src} data-id={pad.id} onClick={getId} />
+                  {pad.isRunning && pad.isOn && <Sound url={props.sounds[i]} playStatus={Sound.status.PLAYING} />}
+                </div>
+              )
+            })}
+          </div>
+        )
+      })}
 
-      <div id="pads">
-        <img src={props.images.snare} />
-        {props.pads[1].map(function(pad) {
-          var src = getImageSrc(pad, props)
-          return (
-            <div id="pad" key={pad.id}>
-              <img src={src} data-id={pad.id} onClick={getId} />
-              {pad.isRunning && pad.isOn && <Sound url={props.sounds.snare} playStatus={Sound.status.PLAYING} />}
-            </div>
-          )
-        })}
-      </div>
-
-      <div id="pads">
-        <img src={props.images.hat} />
-        {props.pads[2].map(function(pad) {
-          var src = getImageSrc(pad, props)
-          return (
-            <div id="pad" key={pad.id}>
-              <img src={src} data-id={pad.id} onClick={getId} />
-              {pad.isRunning && pad.isOn && <Sound url={props.sounds.hat} playStatus={Sound.status.PLAYING} />}
-            </div>
-          )
-        })}
-      </div>
       <div id="pads">
         <div id="pad"><img src={props.images.tempo} /></div>
         <div id="pad"><img src={props.images.slow} data-speed={600} onClick={getSpeed}/></div>
         <div id="pad"><img src={props.images.medium} data-speed={450} onClick={getSpeed}/></div>
         <div id="pad"><img src={props.images.fast} data-speed={200} onClick={getSpeed}/></div>
       </div>
-
+      
   </div>
   )
 }
